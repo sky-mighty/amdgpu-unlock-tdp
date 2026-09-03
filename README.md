@@ -18,7 +18,7 @@ Honestly, I'm not sure. AMD realized the possibility of kernel-level unlocks som
 
 - 5700XT: PL's completely unlocked.
 - W6800: PL's completely unlocked. [Benchmark results](https://openbenchmarking.org/result/2511146-NE-XD270741367)
-- R9700: Minimum PL sort of unlocked (can't go down to zero) and maximum PL stuck at 332w (exactly 10% above.
+- R9700: Minimum PL sort of unlocked (can't go down to zero) and maximum PL stuck at 332w (exactly 10% above). I'm pretty sure I've hit the checks present on the GPU.
 
 Essentially, AMD switched up their power management to give more control to their GPUs. I think this is done at the SMU level; hacking that will be a whole different ordeal that's out of scope for these kernel patches.
 
