@@ -29,3 +29,7 @@ As you'll see from the benchmark results, I've been sitting on these kernel patc
 # Help! I can't apply these patches!
 
 I'll be extremely real with you, I wrote these over a year ago and I've been using my unlocked cards to run LLMs and agents that apply these patches for me with each LTS release. PR's are more than welcome ;)
+
+# Why 500W max?
+
+For what I have, 500W is insanity anyways. I also wanted some sense of granularity on the slider in LACT. Feel free to edit this, just don't do anything stupid. My W6800 hits VRM power limits if I disable the GPU power limits, so just setting this to 9999 won't make your GPU the fastest on earth even when you can cool it properly.
