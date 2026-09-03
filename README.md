@@ -1,5 +1,7 @@
 # What is this?
 
+_First and foremost, I'm not responsible if you set your power limits to 500W and burn your house down. Overclocking is dangerous; do not use these patches unless you know what you're doing._
+
 This set of kernel patches will set the min and max power limits of most AMD GPUs on your system to 0 and 500W, while letting you configure what you exactly want via sysfs.
 
 [LACT](https://github.com/ilya-zlobintsev/LACT) works flawlessly with this kernel patch.
