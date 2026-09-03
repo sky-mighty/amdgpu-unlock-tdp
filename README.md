@@ -1,6 +1,6 @@
-# What is this?
+_First and foremost, I'm not responsible if you set your power limits to 500W and burn your house down. Overclocking is dangerous; do not use these patches unless you know what you're doing. There is a very real chance that you will damage/destroy your GPU, start a fire, or do something else terrible._
 
-_First and foremost, I'm not responsible if you set your power limits to 500W and burn your house down. Overclocking is dangerous; do not use these patches unless you know what you're doing._
+# What is this?
 
 This set of kernel patches will set the min and max power limits of most AMD GPUs on your system to 0 and 500W, while letting you configure what you exactly want via sysfs.
 
