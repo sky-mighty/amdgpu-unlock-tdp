@@ -1,0 +1,24 @@
+--- amdgpu_smu-stock.c	2026-08-20 09:32:55.747100 -0400
++++ amdgpu_smu.c	2026-08-20 09:32:55.747100 -0400
+@@ -2957,7 +2957,10 @@
+ 			*limit = smu->max_power_limit;
+ 			break;
+ 		case SMU_PPT_LIMIT_MIN:
+-			*limit = smu->min_power_limit;
++			if (amdgpu_ignore_pcap)
++				*limit = 0;
++			else
++				*limit = smu->min_power_limit;
+ 			break;
+ 		default:
+ 			return -EINVAL;
+@@ -2981,7 +2984,8 @@
+ 		if (smu->ppt_funcs->set_power_limit)
+ 			return smu->ppt_funcs->set_power_limit(smu, limit_type, limit);
+ 
+-	if ((limit > smu->max_power_limit) || (limit < smu->min_power_limit)) {
++	if (!amdgpu_ignore_pcap &&
++	    ((limit > smu->max_power_limit) || (limit < smu->min_power_limit))) {
+ 		dev_err(smu->adev->dev,
+ 			"New power limit (%d) is out of range [%d,%d]\n",
+ 			limit, smu->min_power_limit, smu->max_power_limit);

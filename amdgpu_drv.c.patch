@@ -1,0 +1,26 @@
+--- amdgpu_drv-stock.c	2026-08-20 09:32:55.747100 -0400
++++ amdgpu_drv.c	2026-08-20 09:32:55.747100 -0400
+@@ -149,6 +149,7 @@
+ };
+ 
+ unsigned int amdgpu_vram_limit = UINT_MAX;
++int amdgpu_ignore_pcap = 0; /* do not ignore by default */
+ int amdgpu_vis_vram_limit;
+ int amdgpu_gart_size = -1; /* auto */
+ int amdgpu_gtt_size = -1; /* auto */
+@@ -272,6 +273,15 @@
+ };
+ 
+ /**
++ * DOC: ignore_pcap (int)
++ * Ignore the minimum and maximum power caps.
++ * Useful on graphics cards where the minimum power cap is very high.
++ * The default is 0 (Do not ignore).
++ */
++MODULE_PARM_DESC(ignore_pcap, "Ignore the minimum and maximum power caps");
++module_param_named(ignore_pcap, amdgpu_ignore_pcap, int, 0600);
++
++/**
+  * DOC: vramlimit (int)
+  * Restrict the total amount of VRAM in MiB for testing.  The default is 0 (Use full VRAM).
+  */

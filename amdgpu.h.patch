@@ -1,0 +1,10 @@
+--- amdgpu-stock.h	2026-08-20 09:32:55.747100 -0400
++++ amdgpu.h	2026-08-20 09:32:55.747100 -0400
+@@ -164,6 +164,7 @@
+  */
+ extern int amdgpu_modeset;
+ extern unsigned int amdgpu_vram_limit;
++extern int amdgpu_ignore_pcap;
+ extern int amdgpu_vis_vram_limit;
+ extern int amdgpu_gart_size;
+ extern int amdgpu_gtt_size;
